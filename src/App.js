@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './App.css';
 import axios from "axios";
+import Date from "./Date";
 
   
 export default function App() {
@@ -51,7 +52,7 @@ export default function App() {
         alt="icon" />
     </div><div className="Date">
         <label>Last Update:</label>
-        <h2>Sunday, 10:00</h2>
+       <Date />
       </div><div class="row">
 
         <div class="col-4">
