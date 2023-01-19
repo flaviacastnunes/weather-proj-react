@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import './App.css';
 import axios from "axios";
-import FormatedDate from "./FormatedDate";
+import FormatedDate from "./FormatedDate.js";
 
   
 export default function App(props) {
 
   const [city, setCity]=useState(props.defaultCity);
-  const[weatherData, setWeatherData]=useState({ready: true});
+  const[weatherData, setWeatherData]=useState({ready: false});
      
   function handleResponse(response) {
     setWeatherData ({
@@ -42,7 +42,7 @@ if(weatherData.ready) {
            <div className="AppWrapper">
             <div className="Header">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Enter a city..." onChange={updateCity}/>
+        <input type="text" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
         <input type="submit" value="Search" />
         <br />
       </form>
@@ -79,8 +79,8 @@ if(weatherData.ready) {
           </ul>
         </div></div>
     
-      <div className="Link"><a href="https://github.com/flaviacastnunes/project-react" target="_blank" rel="noreferrer" title="GithHub Repository">Open-source code,</a> by Flávia Nunes</div>
-      </div></div>
+      
+      </div><div className="Link"><a href="https://github.com/flaviacastnunes/project-react" target="_blank" rel="noreferrer" title="GithHub Repository">Open-source code,</a> by Flávia Nunes</div></div>
       )
     } else {
       search();
