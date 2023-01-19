@@ -1,13 +1,13 @@
 import React, {useState} from "react";
-import './App.css';
+import FormattedDate from "./FormattedDate.js";
 import axios from "axios";
-import FormatedDate from "./FormatedDate.js";
-
+import './App.css';
   
 export default function App(props) {
 
-  const [city, setCity]=useState(props.defaultCity);
   const[weatherData, setWeatherData]=useState({ready: false});
+  const [city, setCity]=useState(props.defaultCity);
+  
      
   function handleResponse(response) {
     setWeatherData ({
@@ -21,15 +21,14 @@ export default function App(props) {
      ready:true,
   })}
 
-
 function handleSubmit(event){
-  event.preventDeafault();
+  event.preventDefault();
   search();
 }
 
 function search(){
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a1140261bdb0b194c8ae933d2f478860&units=metric`
-        axios.get(url).then(handleResponse);
+  axios.get(url).then(handleResponse);
 }
 
 function updateCity(event){
@@ -38,15 +37,14 @@ function updateCity(event){
 
 if(weatherData.ready) {
   return (
-  <div>
+     <div>
            <div className="AppWrapper">
             <div className="Header">
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
+        <input type="search" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
         <input type="submit" value="Search" />
         <br />
       </form>
-
       <h1>{city}</h1>
 
       <div className="Description">{weatherData.description}</div>
@@ -57,11 +55,8 @@ if(weatherData.ready) {
         alt="icon" />
 
     </div>
-            <label>Last Update:</label>
-       <FormatedDate date={weatherData.date}/>
-     
-
-      <div class="row">
+       <FormattedDate date={weatherData.date} />
+        <div class="row">
 
         <div class="col-4">
           <span className="Tempnow">{weatherData.temperature}</span>
@@ -77,9 +72,7 @@ if(weatherData.ready) {
               Humidity: <span>{weatherData.humidity}</span>%
             </li>
           </ul>
-        </div></div>
-    
-      
+        </div></div>    
       </div><div className="Link"><a href="https://github.com/flaviacastnunes/project-react" target="_blank" rel="noreferrer" title="GithHub Repository">Open-source code,</a> by Flávia Nunes</div></div>
       )
     } else {

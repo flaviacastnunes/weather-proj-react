@@ -4,7 +4,8 @@
   border-radius: 5px;
   max-width: 40%;
  }
-ul {
+
+ ul {
   list-style: none;
   font-size: smaller;
 }
@@ -14,11 +15,6 @@ ul {
   font-size: 30px;
 }
 
-
-.Date {
-  padding: 0 200px;
-}
-
 h2 {
   font-size: 20px;
 }
@@ -28,27 +24,13 @@ label {
   color: grey;
   font-weight: bolder;
 }
-.Date {
-  padding: 0 200px;
-}
 
-h2 {
-  font-size: 20px;
-}
 
-label {
-  font-size: 13px;
-  color: grey;
-  font-weight: bolder;
-}
-.Forecastweather {
-  margin: 40px 20px;
-  font-size: 15px;
-}
 .Header {
   padding: 30px 20px 0;
   text-transform: capitalize;
 }
+
 h1 {
   font-size: 30px;
   padding: 10px;
@@ -58,10 +40,15 @@ h1 {
   font-size: 40px;
   padding: 0 50px;
 }
+
 .Description {
   color: black;
 }
+
 .Link{
   text-align: center;
 }
 
+.Date {
+  padding: 0 200px;
+}
