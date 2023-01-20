@@ -39,7 +39,7 @@ function updateCity(event){
 if(weatherData.ready) {
   return (
      <div className="container">
-           <div className="AppWrapper mt-10px">
+           <div className="AppWrapper mt-10">
             <div className="Header">
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
