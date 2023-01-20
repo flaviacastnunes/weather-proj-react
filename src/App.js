@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import FormattedDate from "./FormattedDate.js";
 import WeatherTemp from "./WeatherTemp.js";
+import Forecast from "./Forecast.js";
 import axios from "axios";
 import './App.css';
   
@@ -12,6 +13,7 @@ export default function App(props) {
      
   function handleResponse(response) {
     setWeatherData ({
+      coordinates: response.data.coord,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       humidity: Math.round(response.data.main.humidity),
@@ -38,8 +40,8 @@ function updateCity(event){
 
 if(weatherData.ready) {
   return (
-     <div className="container mt-10">
-           <div className="AppWrapper ">
+     <div className="container">
+           <div className="AppWrapper">
             <div className="Header">
       <form onSubmit={handleSubmit}>
         <input type="search" placeholder="Enter a city..." autoFocus="on" onChange={updateCity}/>
@@ -57,13 +59,13 @@ if(weatherData.ready) {
 
     </div>
        <FormattedDate date={weatherData.date} />
-        <div class="row">
+        <div className="row">
 
-        <div class="col-4">
+        <div className="col-4">
           <WeatherTemp celsius={weatherData.temperature}/>
          </div>
 
-        <div class="col-8">
+        <div className="col-8">
           <ul>
             <li>
               Wind Speed: <span>{weatherData.wind}</span>km/h
@@ -72,7 +74,9 @@ if(weatherData.ready) {
               Humidity: <span>{weatherData.humidity}</span>%
             </li>
           </ul>
-        </div></div>    
+        </div>
+        <Forecast coordinates={weatherData.coordinates}/>
+        </div>    
       </div><div className="Link"><a href="https://github.com/flaviacastnunes/project-react" target="_blank" rel="noreferrer" title="GithHub Repository">Open-source code,</a> by Flávia Nunes</div></div>
       )
     } else {
