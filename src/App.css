@@ -1,8 +1,10 @@
 .AppWrapper {
-  margin: 0 auto;
-  border: 3px orange solid;
+  
+  margin:0 auto;
+    border: 3px orange solid;
   border-radius: 5px;
   max-width: 40%;
+  margin-top:20px;
  }
 
  ul {
@@ -18,13 +20,6 @@
 h2 {
   font-size: 20px;
 }
-
-label {
-  font-size: 13px;
-  color: grey;
-  font-weight: bolder;
-}
-
 
 .Header {
   padding: 30px 20px 0;
@@ -49,6 +44,3 @@ h1 {
   text-align: center;
 }
 
-.Date {
-  padding: 0 200px;
-}
