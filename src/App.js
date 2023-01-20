@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import FormattedDate from "./FormattedDate.js";
+import WeatherTemp from "./WeatherTemp.js";
 import axios from "axios";
 import './App.css';
   
@@ -59,9 +60,8 @@ if(weatherData.ready) {
         <div class="row">
 
         <div class="col-4">
-          <span className="Tempnow">{weatherData.temperature}</span>
-          ºC
-        </div>
+          <WeatherTemp celsius={weatherData.temperature}/>
+         </div>
 
         <div class="col-8">
           <ul>
