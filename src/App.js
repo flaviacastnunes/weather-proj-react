@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import FormattedDate from "./FormattedDate.js";
 import WeatherTemp from "./WeatherTemp.js";
 import Forecast from "./Forecast.js";
-import ForecastIcon from "./ForecastIcon.js";
+import Icon from "./Icon.js";
 import axios from "axios";
 import './App.css';
   
@@ -20,7 +20,7 @@ export default function App(props) {
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
      description: response.data.weather[0].description,
-     icon: (`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`),
+     icon: response.data.weather[0].icon,
      date: new Date(response.data.dt *1000),
      ready:true,
   })}
@@ -53,7 +53,7 @@ if(weatherData.ready) {
 
       <div className="Description">{weatherData.description}</div>
 
-      <ForecastIcon icon={weatherData.icon}/>
+      <Icon icon={weatherData.icon}/>
 
     </div>
        <FormattedDate date={weatherData.date} />

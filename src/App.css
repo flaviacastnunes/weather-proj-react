@@ -3,7 +3,7 @@
   margin:0 auto;
   border: 3px orange solid;
   border-radius: 5px;
-  max-width: 40%;
+  max-width: 60%;
   margin-top:20px;
  }
 
@@ -43,8 +43,3 @@ h1 {
 .Link{
   text-align: center;
 }
-
-.Forecast {
-  color:red;
-}
-
