@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import FormattedDate from "./FormattedDate.js";
 import WeatherTemp from "./WeatherTemp.js";
 import Forecast from "./Forecast.js";
+import ForecastIcon from "./ForecastIcon.js";
 import axios from "axios";
 import './App.css';
   
@@ -52,10 +53,7 @@ if(weatherData.ready) {
 
       <div className="Description">{weatherData.description}</div>
 
-      <img
-        src = {weatherData.icon}
-        className="Icon"
-        alt="icon" />
+      <ForecastIcon icon={weatherData.icon}/>
 
     </div>
        <FormattedDate date={weatherData.date} />
