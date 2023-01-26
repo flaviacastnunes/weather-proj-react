@@ -13,8 +13,8 @@
 }
 
 .Tempnow {
-  margin-left: 20px;
-  font-size: 30px;
+  margin-left: 50px;
+  font-size: 45px;
 }
 
 h2 {
@@ -31,12 +31,8 @@ h1 {
   padding: 10px;
 }
 
-.Icon {
-  font-size: 40px;
-  padding: 0 50px;
-}
-
 .Description {
+  margin-left: 30px;
   color: black;
 }
 

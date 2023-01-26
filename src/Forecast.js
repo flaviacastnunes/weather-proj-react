@@ -26,7 +26,7 @@ setLoaded(false)
                          <div className="col" key={index}>
                             <ForecastDay forecast={daylyForecast} />
                             </div>
-                    )}
+                    )} else {return null}
                 })}
                </div>
                </div>)
