@@ -15,6 +15,11 @@ setLoaded(false)
         setForecast(response.data.daily);
         setLoaded(true);
         }
+
+        function load(){
+        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&appid=63214c4281922e3bb72fdf12dada7734&units=metric`;
+        axios.get(url).then(handleResponse);
+        }
     
     if (loaded) {
         return (
@@ -32,9 +37,7 @@ setLoaded(false)
                </div>)
        
     } else {
-   
-        let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.coordinates.lat}&lon=${props.coordinates.lon}&appid=63214c4281922e3bb72fdf12dada7734&units=metric`;
-        axios.get(url).then(handleResponse);
+        load()
         
         return null;
 }}
